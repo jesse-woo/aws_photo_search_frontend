@@ -9,7 +9,7 @@ phases:
       - echo "Building the front end"
       # - npm install
       # - npm run build
-  post-build:
+  post_build:
     commands:
       - echo "Deploying artefacts to frontend bucket"
       - aws s3 sync s3://cloudpipeline/P2 ./
