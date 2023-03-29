@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+  <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+  <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+  <script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+  <script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+  <script type="text/javascript" src="lib/url-template/url-template.js"></script>
+  <script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+  <script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+  <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+  <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+  <script type="text/javascript" src="apigClient.js"></script>
+
+<head>
+  <meta charset="utf-8">
+  <title>AWS Image Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>AWS Image Search</h1>
+
+  <form class="search-input" id="search-form">
+    <label for="search-term">Search Term:</label>
+    <input type="text" id="search-term" name="search-term" required>
+    <input type="submit" value="Search">
+  </form>
+
+  <form class="search-input">
+    <button type="button" id="voice-search-btn">Voice Search</button>
+    <button type="button" id="voice-stop-btn">Voice Stop</button>
+  </form>
+
+  <h2>Search Results:</h2>
+  <div id="search-results" class="row"></div>
+  <body>
+    <img src="https://<bucket-name>.s3.amazonaws.com/<object-key>">
+  </body>
+
+  <h2>Upload Image:</h2>
+  <form id="upload-form">
+    <label for="upload-file">File:</label>
+    <input type="file" id="upload-file" name="upload-file" accept="image/*" required>
+    <br>
+    <label for="upload-labels">Labels:</label>
+    <input type="text" id="upload-labels" name="upload-labels">
+    <br>
+    <input type="submit" value="Upload">
+  </form>
+
+  <script src="main.js"></script>
+</body>
+</html>
