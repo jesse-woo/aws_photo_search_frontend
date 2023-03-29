@@ -1,9 +1,9 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      nodejs: 14
+  # install:
+    # runtime-versions:
+      # nodejs: 16
   build:
     commands:
       - echo "Building the front end"
