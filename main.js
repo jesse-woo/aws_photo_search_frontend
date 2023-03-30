@@ -26,7 +26,7 @@ searchForm.addEventListener('submit', (event) => {
       searchResults.innerHTML = '';
       const photos = JSON.parse(data.body);
       console.log("The results are:")
-      console.log()
+      console.log(photos)
       photos.forEach(photo => {
         const img = document.createElement('img');
         const photoUrl = `https://${photo.bucket}.s3.amazonaws.com/${photo.objectKey}`;
