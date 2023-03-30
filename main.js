@@ -1,3 +1,4 @@
+// This is a working version of the frontend wihtout API keys. Roll back to this if problems
 // AWS S3 Image Search
 const searchForm = document.getElementById('search-form');
 const searchResults = document.getElementById('search-results');
