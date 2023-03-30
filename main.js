@@ -16,22 +16,22 @@ headers.append('x-api-key', apiKey);
 searchForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const searchTerm = document.getElementById('search-term').value;
-  console.log("The searchTerm is")
-  console.log(searchTerm)
+  // console.log("The searchTerm is")
+  // console.log(searchTerm)
   const url = `https://ph7tsuqnwf.execute-api.us-east-1.amazonaws.com/dev/search?q=${searchTerm}`;
-  console.log(url)
+  // console.log(url)
   fetch(url, { headers })
     .then(response => response.json())
     .then(data => {
       searchResults.innerHTML = '';
       const photos = JSON.parse(data.body);
-      console.log("The results are:")
-      console.log(photos)
+      // console.log("The results are:")
+      // console.log(photos)
       photos.forEach(photo => {
         const img = document.createElement('img');
-        //const photoUrl = `https://${photo.bucket}.s3.amazonaws.com/${photo.objectKey}`;
-        console.log("photo.url gives you")
-        console.log(photo.url)
+        // const photoUrl = `https://${photo.bucket}.s3.amazonaws.com/${photo.objectKey}`;
+        // console.log("photo.url gives you")
+        // console.log(photo.url)
         const photoUrl = photo.url
         img.src = photoUrl;
         img.alt = photo.labels.join(', ');
@@ -51,8 +51,7 @@ const uploadForm = document.getElementById('upload-form');
 
 uploadForm.addEventListener('submit',  (event) => {
   event.preventDefault();
-  // const encFileName = encodeURIComponent(fileName);
-  console.log("You successfully called the put method")
+  // console.log("You successfully called the put method")
   const fileInput = document.getElementById('upload-file');
   const file = fileInput.files[0];
   const encFileName = encodeURIComponent(file.name);
