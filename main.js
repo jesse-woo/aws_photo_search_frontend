@@ -29,7 +29,10 @@ searchForm.addEventListener('submit', (event) => {
       console.log(photos)
       photos.forEach(photo => {
         const img = document.createElement('img');
-        const photoUrl = `https://${photo.bucket}.s3.amazonaws.com/${photo.objectKey}`;
+        //const photoUrl = `https://${photo.bucket}.s3.amazonaws.com/${photo.objectKey}`;
+        console.log("photo.url gives you")
+        console.log(photo.url)
+        const photoUrl = photo.url
         img.src = photoUrl;
         img.alt = photo.labels.join(', ');
         searchResults.appendChild(img);
