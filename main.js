@@ -5,7 +5,13 @@ const searchResults = document.getElementById('search-results');
 const voiceSearchBtn = document.getElementById('voice-search-btn');
 const searchField = document.getElementById('search-term');
 
+// Obviously you wouldn't want to hardcode the key like this in production
+const apiKey = 'j7awLpdVApa0RGr8xNB4GkuZpSaTnV93DqR58OAf';
+
 let recognition = null;
+
+const headers = new Headers();
+headers.append('x-api-key', apiKey);
 
 searchForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -14,7 +20,7 @@ searchForm.addEventListener('submit', (event) => {
   console.log(searchTerm)
   const url = `https://ph7tsuqnwf.execute-api.us-east-1.amazonaws.com/dev/search?q=${searchTerm}`;
   console.log(url)
-  fetch(url)
+  fetch(url, { headers })
     .then(response => response.json())
     .then(data => {
       searchResults.innerHTML = '';
@@ -35,8 +41,6 @@ searchForm.addEventListener('submit', (event) => {
 
 // AWS S3 Image Upload
 const uploadForm = document.getElementById('upload-form');
-// Obviously you wouldn't want to hardcode the key like this in production
-const apiKey = 'j7awLpdVApa0RGr8xNB4GkuZpSaTnV93DqR58OAf';
 
 uploadForm.addEventListener('submit',  (event) => {
   event.preventDefault();
