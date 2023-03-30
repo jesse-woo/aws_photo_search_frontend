@@ -38,6 +38,8 @@ searchForm.addEventListener('submit', (event) => {
         searchResults.appendChild(img);
       });
     })
+    //console.log("The search result is")
+    //console.log(searchResults)
     .catch(error => {
       console.error(error);
       searchResults.innerHTML = 'Error: Unable to load search results';
