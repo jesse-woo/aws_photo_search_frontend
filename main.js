@@ -35,6 +35,8 @@ searchForm.addEventListener('submit', (event) => {
 
 // AWS S3 Image Upload
 const uploadForm = document.getElementById('upload-form');
+// Obviously you wouldn't want to hardcode the key like this in production
+const apiKey = 'j7awLpdVApa0RGr8xNB4GkuZpSaTnV93DqR58OAf';
 
 uploadForm.addEventListener('submit',  (event) => {
   event.preventDefault();
@@ -59,7 +61,8 @@ uploadForm.addEventListener('submit',  (event) => {
     method: 'PUT',
     headers: {
       'Content-Type': file.type,
-      'x-amz-meta-customLabels': JSON.stringify(metadata)
+      'x-amz-meta-customLabels': JSON.stringify(metadata),
+      'x-api-key': apiKey
     },
     body: file
   })
