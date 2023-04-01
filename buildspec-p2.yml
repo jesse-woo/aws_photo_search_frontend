@@ -13,6 +13,6 @@ phases:
     commands:
       - echo "Deploying artefacts to frontend bucket"
       - aws s3 sync s3://cloudpipeline/P2 ./
-      - aws s3 sync ./ s3://coms6998-hw2-jw4202-frontend
+      - aws s3 sync ./ s3://coms6998-hw2-jw4202-frontend2
 
       
